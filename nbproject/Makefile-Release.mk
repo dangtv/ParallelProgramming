@@ -35,7 +35,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/Nhan2MatranMPI.o \
+	${OBJECTDIR}/bai_tap_mot.o \
+	${OBJECTDIR}/example_mpi.o \
+	${OBJECTDIR}/example_temperature.o \
+	${OBJECTDIR}/my_matrix_multiplication.o \
+	${OBJECTDIR}/nhan2matran_MPI_Bcast_demo.o \
+	${OBJECTDIR}/nhan2matran_MPI_Gather.o \
+	${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o
 
 
 # C Compiler Flags
@@ -62,10 +69,45 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/laptrinhsongsong: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/laptrinhsongsong ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/Nhan2MatranMPI.o: Nhan2MatranMPI.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Nhan2MatranMPI.o Nhan2MatranMPI.c
+
+${OBJECTDIR}/bai_tap_mot.o: bai_tap_mot.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/bai_tap_mot.o bai_tap_mot.c
+
+${OBJECTDIR}/example_mpi.o: example_mpi.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/example_mpi.o example_mpi.c
+
+${OBJECTDIR}/example_temperature.o: example_temperature.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/example_temperature.o example_temperature.cpp
+
+${OBJECTDIR}/my_matrix_multiplication.o: my_matrix_multiplication.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/my_matrix_multiplication.o my_matrix_multiplication.c
+
+${OBJECTDIR}/nhan2matran_MPI_Bcast_demo.o: nhan2matran_MPI_Bcast_demo.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/nhan2matran_MPI_Bcast_demo.o nhan2matran_MPI_Bcast_demo.c
+
+${OBJECTDIR}/nhan2matran_MPI_Gather.o: nhan2matran_MPI_Gather.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/nhan2matran_MPI_Gather.o nhan2matran_MPI_Gather.c
+
+${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o: nhan2matran_MPI_Scatter_demo.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o nhan2matran_MPI_Scatter_demo.c
 
 # Subprojects
 .build-subprojects:

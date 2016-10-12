@@ -12,7 +12,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.cpp</itemPath>
+      <itemPath>Nhan2MatranMPI.c</itemPath>
+      <itemPath>bai_tap_mot.c</itemPath>
+      <itemPath>example_mpi.c</itemPath>
+      <itemPath>example_temperature.cpp</itemPath>
+      <itemPath>my_matrix_multiplication.c</itemPath>
+      <itemPath>nhan2matran_MPI_Bcast_demo.c</itemPath>
+      <itemPath>nhan2matran_MPI_Gather.c</itemPath>
+      <itemPath>nhan2matran_MPI_Scatter_demo.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -36,7 +43,21 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Nhan2MatranMPI.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="example_mpi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="example_temperature.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="my_matrix_multiplication.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Bcast_demo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Gather.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Scatter_demo.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -59,7 +80,21 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Nhan2MatranMPI.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="example_mpi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="example_temperature.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="my_matrix_multiplication.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Bcast_demo.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Gather.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="nhan2matran_MPI_Scatter_demo.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>
