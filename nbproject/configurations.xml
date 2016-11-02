@@ -13,6 +13,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Nhan2MatranMPI.c</itemPath>
+      <itemPath>PhuongTrinhNhiet1D_C.c</itemPath>
+      <itemPath>PhuongTrinhNhiet1D_C_openmpi.c</itemPath>
       <itemPath>bai_tap_mot.c</itemPath>
       <itemPath>example_mpi.c</itemPath>
       <itemPath>example_temperature.cpp</itemPath>
@@ -44,6 +46,10 @@
       <compileType>
       </compileType>
       <item path="Nhan2MatranMPI.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="PhuongTrinhNhiet1D_C.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="PhuongTrinhNhiet1D_C_openmpi.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -81,6 +87,10 @@
         </asmTool>
       </compileType>
       <item path="Nhan2MatranMPI.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="PhuongTrinhNhiet1D_C.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="PhuongTrinhNhiet1D_C_openmpi.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
       </item>

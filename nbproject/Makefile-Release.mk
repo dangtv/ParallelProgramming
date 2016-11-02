@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Nhan2MatranMPI.o \
+	${OBJECTDIR}/PhuongTrinhNhiet1D_C.o \
+	${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o \
 	${OBJECTDIR}/bai_tap_mot.o \
 	${OBJECTDIR}/example_mpi.o \
 	${OBJECTDIR}/example_temperature.o \
@@ -73,6 +75,16 @@ ${OBJECTDIR}/Nhan2MatranMPI.o: Nhan2MatranMPI.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Nhan2MatranMPI.o Nhan2MatranMPI.c
+
+${OBJECTDIR}/PhuongTrinhNhiet1D_C.o: PhuongTrinhNhiet1D_C.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet1D_C.o PhuongTrinhNhiet1D_C.c
+
+${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o: PhuongTrinhNhiet1D_C_openmpi.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o PhuongTrinhNhiet1D_C_openmpi.c
 
 ${OBJECTDIR}/bai_tap_mot.o: bai_tap_mot.c 
 	${MKDIR} -p ${OBJECTDIR}
