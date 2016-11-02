@@ -38,6 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Nhan2MatranMPI.o \
 	${OBJECTDIR}/PhuongTrinhNhiet1D_C.o \
 	${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o \
+	${OBJECTDIR}/PhuongTrinhNhiet2D.o \
+	${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o \
 	${OBJECTDIR}/bai_tap_mot.o \
 	${OBJECTDIR}/example_mpi.o \
 	${OBJECTDIR}/example_temperature.o \
@@ -85,6 +87,16 @@ ${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o: PhuongTrinhNhiet1D_C_openmpi.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o PhuongTrinhNhiet1D_C_openmpi.c
+
+${OBJECTDIR}/PhuongTrinhNhiet2D.o: PhuongTrinhNhiet2D.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet2D.o PhuongTrinhNhiet2D.c
+
+${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o: PhuongTrinhNhiet2D_openmpi.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o PhuongTrinhNhiet2D_openmpi.c
 
 ${OBJECTDIR}/bai_tap_mot.o: bai_tap_mot.c 
 	${MKDIR} -p ${OBJECTDIR}
