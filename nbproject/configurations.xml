@@ -17,6 +17,7 @@
       <itemPath>PhuongTrinhNhiet1D_C_openmpi.c</itemPath>
       <itemPath>PhuongTrinhNhiet2D.c</itemPath>
       <itemPath>PhuongTrinhNhiet2D_openmpi.c</itemPath>
+      <itemPath>SumReductionMpi.c</itemPath>
       <itemPath>bai_tap_mot.c</itemPath>
       <itemPath>example_mpi.c</itemPath>
       <itemPath>example_temperature.cpp</itemPath>
@@ -56,6 +57,8 @@
       <item path="PhuongTrinhNhiet2D.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="PhuongTrinhNhiet2D_openmpi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SumReductionMpi.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -101,6 +104,8 @@
       <item path="PhuongTrinhNhiet2D.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="PhuongTrinhNhiet2D_openmpi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="SumReductionMpi.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="bai_tap_mot.c" ex="false" tool="0" flavor2="0">
       </item>

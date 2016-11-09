@@ -6,6 +6,17 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/PhuongTrinhNhiet1D_C.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/PhuongTrinhNhiet2D_openmpi.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/nhan2matran_MPI_Bcast_demo.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/example_temperature.cpp</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/my_matrix_multiplication.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/example_mpi.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/nhan2matran_MPI_Gather.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/PhuongTrinhNhiet2D.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/PhuongTrinhNhiet1D_C_openmpi.c</file>
+            <file>file:/home/dang/NetBeansProjects/laptrinhsongsong/Nhan2MatranMPI.c</file>
+        </group>
     </open-files>
 </project-private>

@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/PhuongTrinhNhiet1D_C_openmpi.o \
 	${OBJECTDIR}/PhuongTrinhNhiet2D.o \
 	${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o \
+	${OBJECTDIR}/SumReductionMpi.o \
 	${OBJECTDIR}/bai_tap_mot.o \
 	${OBJECTDIR}/example_mpi.o \
 	${OBJECTDIR}/example_temperature.o \
@@ -97,6 +98,11 @@ ${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o: PhuongTrinhNhiet2D_openmpi.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PhuongTrinhNhiet2D_openmpi.o PhuongTrinhNhiet2D_openmpi.c
+
+${OBJECTDIR}/SumReductionMpi.o: SumReductionMpi.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SumReductionMpi.o SumReductionMpi.c
 
 ${OBJECTDIR}/bai_tap_mot.o: bai_tap_mot.c 
 	${MKDIR} -p ${OBJECTDIR}
