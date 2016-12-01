@@ -47,7 +47,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/my_matrix_multiplication.o \
 	${OBJECTDIR}/nhan2matran_MPI_Bcast_demo.o \
 	${OBJECTDIR}/nhan2matran_MPI_Gather.o \
-	${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o
+	${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o \
+	${OBJECTDIR}/thi.o \
+	${OBJECTDIR}/thi_mp.o
 
 
 # C Compiler Flags
@@ -138,6 +140,16 @@ ${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o: nhan2matran_MPI_Scatter_demo.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/nhan2matran_MPI_Scatter_demo.o nhan2matran_MPI_Scatter_demo.c
+
+${OBJECTDIR}/thi.o: thi.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/thi.o thi.cpp
+
+${OBJECTDIR}/thi_mp.o: thi_mp.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/thi_mp.o thi_mp.cpp
 
 # Subprojects
 .build-subprojects:
