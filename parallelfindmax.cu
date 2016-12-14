@@ -18,9 +18,12 @@ __global__ void findmax(float * input, float * output, int len) {
 	__syncthreads();
 
 
-	for(unsigned int stride = blockDim.x/2; stride >= 1; stride >>= 1) {
-		if(t < stride)
+	for(unsigned int stride = blockDim.x/4; stride >= 1; stride >>= 1) {
+		if(t < stride){
 			partialMax[t] = (partialMax[t] < partialMax[t + stride]) ? partialMax[t + stride]:partialMax[t];
+			partialMax[t] = (partialMax[t] < partialMax[t + 2*stride]) ? partialMax[t + 2*stride]:partialMax[t];
+			partialMax[t] = (partialMax[t] < partialMax[t + 3*stride]) ? partialMax[t + 3*stride]:partialMax[t];
+		}
 		__syncthreads();
 	}
 	
