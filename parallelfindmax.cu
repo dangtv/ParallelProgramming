@@ -43,7 +43,7 @@ int main(int argc, char ** argv) {
 
     hostInput = (float*) malloc(numInputElements * sizeof(float));
     for(int i = 0; i < numInputElements; i++) {
-        hostInput[i] = i;
+        hostInput[i] = (i-20000)*(i-20000);
     }
 
     numOutputElements = numInputElements / (BLOCK_SIZE);
