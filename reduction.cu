@@ -12,18 +12,17 @@
 #define BLOCK_SIZE 512 //@@ You can change this
 
 
-__global__ void total(float * input, float * output, int len) {
-	__shared__ float partialMax[2 * BLOCK_SIZE];
+__global__ void findmax(float * input, float * output, int len) {
+	__shared__ float partialMax[BLOCK_SIZE];
 	
 	unsigned int t = threadIdx.x;
-	unsigned int start = 2 * blockIdx.x * blockDim.x;
+	unsigned int start = blockIdx.x * blockDim.x;
 	
 	partialMax[t] = (t < len) ? input[start + t] : 0;
-	partialMax[blockDim.x + t] = ((blockDim.x + t) < len) ? input[start + blockDim.x + t] : 0;
 	
 	//@@ Load a segment of the input vector into shared memory
-	
-	for(unsigned int stride = blockDim.x; stride >= 1; stride >>= 1) {
+
+	for(unsigned int stride = blockDim.x/2; stride >= 1; stride >>= 1) {
 		if(t < stride)
 			partialMax[t] = (partialMax[t] < partialMax[t + stride]) ? partialMax[t + stride]:partialMax[t];
 		__syncthreads();
@@ -56,8 +55,8 @@ int main(int argc, char ** argv) {
         hostInput[i] = i;
     }
 
-    numOutputElements = numInputElements / (BLOCK_SIZE<<1);
-    if (numInputElements % (BLOCK_SIZE<<1)) {
+    numOutputElements = numInputElements / (BLOCK_SIZE);
+    if (numInputElements % (BLOCK_SIZE)) {
         numOutputElements++;
     }
     hostOutput = (float*) malloc(numOutputElements * sizeof(float));
@@ -76,7 +75,7 @@ int main(int argc, char ** argv) {
 	dim3 DimBlock(BLOCK_SIZE, 1, 1);
 
     //@@ Launch the GPU Kernel here
-	total<<<DimGrid, DimBlock>>>(deviceInput, deviceOutput, numInputElements);
+	findmax<<<DimGrid, DimBlock>>>(deviceInput, deviceOutput, numInputElements);
 	
     cudaDeviceSynchronize();
 
