@@ -47,7 +47,7 @@ int main(int argc, char ** argv) {
     float * hostOutput; // The output list
     float * deviceInput;
     float * deviceOutput;
-    int numInputElements = 2048; // number of elements in the input list
+    int numInputElements = 4096; // number of elements in the input list
     int numOutputElements; // number of elements in the output list
 
 
