@@ -19,7 +19,7 @@ __global__ void findmax(float * input, float * output, int len) {
 	unsigned int start = blockIdx.x * blockDim.x;
 	
 	partialMax[t] = (t < len) ? input[start + t] : 0;
-	
+	__syncthreads();
 	//@@ Load a segment of the input vector into shared memory
 
 	for(unsigned int stride = blockDim.x/2; stride >= 1; stride >>= 1) {
