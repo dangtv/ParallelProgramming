@@ -3,7 +3,12 @@
 // Output its sum = lst[0] + lst[1] + ... + lst[n-1];
 // Due Tuesday, January 15, 2013 at 11:59 p.m. PST
 
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <cuda.h>
 #define BLOCK_SIZE 512 //@@ You can change this
 
 
