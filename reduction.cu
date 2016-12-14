@@ -54,6 +54,7 @@ int main(int argc, char ** argv) {
     hostInput = (float*) malloc(numInputElements * sizeof(float));
     for(int i = 0; i < numInputElements; i++) {
         hostInput[i] = i;
+	printf("%f\n", hostInput[i]);
     }
 
     numOutputElements = numInputElements / (BLOCK_SIZE<<1);
