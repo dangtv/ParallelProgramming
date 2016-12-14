@@ -42,7 +42,7 @@ __global__ void total(float * input, float * output, int len) {
 
 int main(int argc, char ** argv) {
  
-   int ii;
+    int ii;
     float * hostInput; // The input 1D list
     float * hostOutput; // The output list
     float * deviceInput;
@@ -51,7 +51,7 @@ int main(int argc, char ** argv) {
     int numOutputElements; // number of elements in the output list
 
 
-    hostInput = new float[numInputElements];
+    hostInput = (float*) malloc(numInputElements * sizeof(float));
     for(int i = 0; i < numInputElements; i++) {
         hostInput[i] = i;
     }
@@ -91,6 +91,7 @@ int main(int argc, char ** argv) {
      * require that for this lab.
      ********************************************************************/
     for (ii = 1; ii < numOutputElements; ii++) {
+	printf("%f\n", hostOutput[ii]);
         hostOutput[0] += hostOutput[ii];
     }
     printf("%f\n", hostOutput[0]);
