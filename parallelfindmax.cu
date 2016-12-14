@@ -14,7 +14,7 @@ __global__ void findmax(float * input, float * output, int len) {
 	unsigned int t = threadIdx.x;
 	unsigned int start = blockIdx.x * blockDim.x;
 	
-	partialMax[t] = (t < len) ? input[start + t] : 0;
+	partialMax[t] = (start + t < len) ? input[start + t] : 0;
 	__syncthreads();
 
 
@@ -40,13 +40,13 @@ int main(int argc, char ** argv) {
     float * hostOutput; // The output array
     float * deviceInput;
     float * deviceOutput;
-    int numInputElements = 40960; // number of elements in the input array
+    int numInputElements = 4099; // number of elements in the input array
     int numOutputElements; // number of elements in the output array
 
 
     hostInput = (float*) malloc(numInputElements * sizeof(float));
     for(int i = 0; i < numInputElements; i++) {
-        hostInput[i] = (i-20000)*(i-20000);
+        hostInput[i] = (i-2000)*(i-2000);
     }
 
     numOutputElements = numInputElements / (BLOCK_SIZE);
