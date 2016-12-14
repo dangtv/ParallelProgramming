@@ -24,9 +24,9 @@ __global__ void total(float * input, float * output, int len) {
 	//@@ Load a segment of the input vector into shared memory
 	
 	for(unsigned int stride = blockDim.x; stride >= 1; stride >>= 1) {
-		__syncthreads();
 		if(t < stride)
 			partialMax[t] = (partialMax[t] < partialMax[t + stride]) ? partialMax[t + stride]:partialMax[t];
+		__syncthreads();
 	}
 	
 	if(t == 0) {
@@ -47,7 +47,7 @@ int main(int argc, char ** argv) {
     float * hostOutput; // The output list
     float * deviceInput;
     float * deviceOutput;
-    int numInputElements = 4096; // number of elements in the input list
+    int numInputElements = 40960; // number of elements in the input list
     int numOutputElements; // number of elements in the output list
 
 
