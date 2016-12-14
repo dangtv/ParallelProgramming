@@ -47,7 +47,7 @@ int main(int argc, char ** argv) {
     float * hostOutput; // The output list
     float * deviceInput;
     float * deviceOutput;
-    int numInputElements = 1024; // number of elements in the input list
+    int numInputElements = 2048; // number of elements in the input list
     int numOutputElements; // number of elements in the output list
 
 
@@ -91,7 +91,7 @@ int main(int argc, char ** argv) {
      * require that for this lab.
      ********************************************************************/
     for (ii = 1; ii < numOutputElements; ii++) {
-        hostOutput[0] += hostOutput[ii];
+        hostOutput[0] = (hostOutput[0]<hostOutput[ii]) ? hostOutput[ii]:hostOutput[0];
     }
     printf("%f\n", hostOutput[0]);
 
