@@ -13,24 +13,24 @@
 
 
 __global__ void total(float * input, float * output, int len) {
-	__shared__ float partialSum[2 * BLOCK_SIZE];
+	__shared__ float partialMax[2 * BLOCK_SIZE];
 	
 	unsigned int t = threadIdx.x;
 	unsigned int start = 2 * blockIdx.x * blockDim.x;
 	
-	partialSum[t] = (t < len) ? input[start + t] : 0;
-	partialSum[blockDim.x + t] = ((blockDim.x + t) < len) ? input[start + blockDim.x + t] : 0;
+	partialMax[t] = (t < len) ? input[start + t] : 0;
+	partialMax[blockDim.x + t] = ((blockDim.x + t) < len) ? input[start + blockDim.x + t] : 0;
 	
 	//@@ Load a segment of the input vector into shared memory
 	
 	for(unsigned int stride = blockDim.x; stride >= 1; stride >>= 1) {
 		__syncthreads();
 		if(t < stride)
-			partialSum[t] += partialSum[t + stride];
+			partialMax[t] = (partialMax[t] < partialMax[t + stride]) ? partialMax[t + stride]:partialMax[t];
 	}
 	
 	if(t == 0) {
-		output[blockIdx.x + t] = partialSum[t];
+		output[blockIdx.x + t] = partialMax[t];
 	}
 	//@@ Traverse the reduction tree
     //@@ Write the computed sum of the block to the output vector at the 
@@ -47,14 +47,13 @@ int main(int argc, char ** argv) {
     float * hostOutput; // The output list
     float * deviceInput;
     float * deviceOutput;
-    int numInputElements = 2000; // number of elements in the input list
+    int numInputElements = 1024; // number of elements in the input list
     int numOutputElements; // number of elements in the output list
 
 
     hostInput = (float*) malloc(numInputElements * sizeof(float));
     for(int i = 0; i < numInputElements; i++) {
         hostInput[i] = i;
-	printf("%f\n", hostInput[i]);
     }
 
     numOutputElements = numInputElements / (BLOCK_SIZE<<1);
@@ -92,7 +91,6 @@ int main(int argc, char ** argv) {
      * require that for this lab.
      ********************************************************************/
     for (ii = 1; ii < numOutputElements; ii++) {
-	printf("%f\n", hostOutput[ii]);
         hostOutput[0] += hostOutput[ii];
     }
     printf("%f\n", hostOutput[0]);
@@ -100,8 +98,6 @@ int main(int argc, char ** argv) {
     //@@ Free the GPU memory here
 	cudaFree(deviceInput);
 	cudaFree(deviceOutput);
-	
-
 
     free(hostInput);
     free(hostOutput);    
